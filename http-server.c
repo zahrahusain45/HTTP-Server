@@ -368,6 +368,9 @@ static int handleFileRequest(
     if (ferror(fp))
         perror("fread failed");
 
+    printf("Requested file path: %s\n", file);
+    fflush(stdout);
+
 func_end:
 
     // clean up
@@ -387,20 +390,28 @@ int main(int argc, char *argv[])
     if (signal(SIGPIPE, SIG_IGN) == SIG_ERR)
         die("signal() failed");
 
-    if (argc != 5) {
+    if (argc < 3 || argc > 5) {
         fprintf(stderr, "usage: %s <server_port> <web_root> <mdb-lookup-host> <mdb-lookup-port>\n", argv[0]);
         exit(1);
     }
 
     unsigned short servPort = atoi(argv[1]);
     const char *webRoot = argv[2];
-    const char *mdbHost = argv[3];
-    unsigned short mdbPort = atoi(argv[4]);
+    const char *mdbHost = NULL;
+    unsigned short mdbPort = 0;
+    int mdbSock = -1;
+    FILE *mdbFp = NULL;
 
-    int mdbSock = createMdbLookupConnection(mdbHost, mdbPort);
-    FILE *mdbFp = fdopen(mdbSock, "r");
-    if (mdbFp == NULL)
-        die("fdopen failed");
+    if (argc == 5) {  // Only try to connect if arguments are provided
+        mdbHost = argv[3];
+        mdbPort = atoi(argv[4]);
+        mdbSock = createMdbLookupConnection(mdbHost, mdbPort);
+        mdbFp = fdopen(mdbSock, "r");
+        if (mdbFp == NULL)
+            die("fdopen failed");
+    }
+
+
 
     int servSock = createServerSocket(servPort);
 
