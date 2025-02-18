@@ -1,0 +1,20 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     http-server
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _Send, symObjAddr: 0x0, symBinAddr: 0x100002614, symSize: 0x84 }
+  - { offsetInCU: 0x4D, offset: 0x4D, size: 0x8, addend: 0x0, symName: _localServerInfo, symObjAddr: 0x4A80, symBinAddr: 0x100008100, symSize: 0x0 }
+  - { offsetInCU: 0xA1, offset: 0xA1, size: 0x8, addend: 0x0, symName: _HTTP_StatusCodes, symObjAddr: 0x17C8, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x147, offset: 0x147, size: 0x8, addend: 0x0, symName: _Send, symObjAddr: 0x0, symBinAddr: 0x100002614, symSize: 0x84 }
+  - { offsetInCU: 0x199, offset: 0x199, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x84, symBinAddr: 0x100002698, symSize: 0x658 }
+  - { offsetInCU: 0x389, offset: 0x389, size: 0x8, addend: 0x0, symName: _die, symObjAddr: 0x6DC, symBinAddr: 0x100002CF0, symSize: 0x20 }
+  - { offsetInCU: 0x3AD, offset: 0x3AD, size: 0x8, addend: 0x0, symName: _createMdbLookupConnection, symObjAddr: 0x6FC, symBinAddr: 0x100002D10, symSize: 0x14C }
+  - { offsetInCU: 0x41B, offset: 0x41B, size: 0x8, addend: 0x0, symName: _createServerSocket, symObjAddr: 0x848, symBinAddr: 0x100002E5C, symSize: 0x120 }
+  - { offsetInCU: 0x45F, offset: 0x45F, size: 0x8, addend: 0x0, symName: _sendErrorStatus, symObjAddr: 0x968, symBinAddr: 0x100002F7C, symSize: 0xC4 }
+  - { offsetInCU: 0x4AD, offset: 0x4AD, size: 0x8, addend: 0x0, symName: _handleMdbRequest, symObjAddr: 0xA2C, symBinAddr: 0x100003040, symSize: 0x3C4 }
+  - { offsetInCU: 0x5A9, offset: 0x5A9, size: 0x8, addend: 0x0, symName: _handleFileRequest, symObjAddr: 0xDF0, symBinAddr: 0x100003404, symSize: 0x2D4 }
+  - { offsetInCU: 0x662, offset: 0x662, size: 0x8, addend: 0x0, symName: _getReasonPhrase, symObjAddr: 0x10C4, symBinAddr: 0x1000036D8, symSize: 0xA4 }
+  - { offsetInCU: 0x698, offset: 0x698, size: 0x8, addend: 0x0, symName: __OSSwapInt16, symObjAddr: 0x1168, symBinAddr: 0x10000377C, symSize: 0x24 }
+  - { offsetInCU: 0x6C0, offset: 0x6C0, size: 0x8, addend: 0x0, symName: _sendStatusLine, symObjAddr: 0x118C, symBinAddr: 0x1000037A0, symSize: 0xA8 }
+  - { offsetInCU: 0x70E, offset: 0x70E, size: 0x8, addend: 0x0, symName: _send301Status, symObjAddr: 0x1234, symBinAddr: 0x100003848, symSize: 0x100 }
+...
